@@ -1,0 +1,68 @@
+.clause-match-editor .editor {
+    outline: none;
+    display: inline-block;
+    width: 100%;
+    min-height: 16px;
+}
+
+.clause-match-editor .editor.empty:after {
+    content: '(empty)';
+    color: #fff;
+    font-style: italic;
+}
+
+.clause-match-editor ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.clause-match-editor li {
+    position: relative;
+    padding: 20px 80px 20px 20px;
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+
+.clause-match-editor .button {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    color: #fff;
+    font-size: 1.4em;
+    border-width: 0;
+    outline: none;
+    cursor: pointer;
+}
+.clause-match-editor .button.add {
+    right: 30px;
+    background-color: #a6c541;
+}
+
+.clause-match-editor .button.del {
+    right: 0;
+    background-color: #c15c44;
+}
+
+.clause-match-editor .button.del.disabled {
+    right: 0;
+    background-color: #ccc;
+}
+
+.clause-match-editor ul[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+.clause-match-editor ul[dnd-list] .dndPlaceholder {
+    background-color: rgba(0,0,0,0);
+    height: 18px;
+}
+
+[ng-drop].drag-enter {
+    outline: dashed 2px yellow;
+}
+
+[ng-drag].drag-over.drag-enter {
+    outline: solid 2px #ddd;
+}

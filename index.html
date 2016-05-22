@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS test</title>
+    <link rel="stylesheet" href="css/common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script type="text/javascript" src="js/lib/ngDraggable.js"></script>
+    <script src="js/list.js"></script>
+</head>
+<body ng-controller="ListController as ths">
+    <h1>ClauseMatch Editor</h1>
+    <div class="column">
+        <div class="clause-match-editor">
+            <ul ng-model="models.list">
+                <li ng-repeat="item in models.list"
+                    ng-drop="true" ng-drop-success="ths.move($index, $data, $event)"
+                    ng-drag="true" ng-drag-data="item">
+                    <span class="editor" ng-class="{'empty': item.text}" contenteditable ng-model="item.text"></span>
+                    <button class="button add" ng-click="ths.add($index)">+</button>
+                    <button class="button del" ng-click="ths.del($index)"
+                            ng-class="{'disabled': models.list.length === 1}">-</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="column">
+        <div class="json">{{modelAsJson}}</div>
+    </div>
+</body>
+</html>
